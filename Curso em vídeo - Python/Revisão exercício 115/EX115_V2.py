@@ -1,12 +1,21 @@
 # Crie um pequeno sistema modularizado que permita cadastrar pessoas pelo seu nome e idade em um arquivo de texto simples.
 # O sistema só vai ter 2 opções: cadastrar uma nova pessoa e listar todas as pessoas cadastradas.
 from modulos_sistemas import cadastro_design,dados_manipul
-
+from time import sleep
+print('-' * 40)
+print(f'{'Seja bem vindo ao sistema de cadastro':^40}')
+print('-' * 40)
+print(f'\033[0:33mCarregando...\033[m')
+sleep(1)
 while True:
+    #chama a função do pacote importado. Onde é gerado o layout do mnu de operação. Retorna uma valor inteiro para ser utilizado na sequencia do programa
     n = cadastro_design.header_conf('Menu Principal')
+    # inicio do tratamento de erros.
     try:
+        #Usuário insere o nome do arquivo a ser lido.
         nome = str(input('Digite o nome do arquivo a ser lido: '))
     except KeyboardInterrupt:
+        # interrompe o programa
         print('\033[0:31mVocê desejou sair do programa\033[m')
         raise
     except:
@@ -15,6 +24,7 @@ while True:
     else:
         if n == 1:
             status = dados_manipul.arq_existe(nome)
+            # se não existe o arquivo selecionado, é dado a opção de ser criado
             if status is False:
                 while True:
                     try:
@@ -29,8 +39,8 @@ while True:
                             dados_manipul.criar_arquivo(nome)
                         else:
                             break
-
-
+            else:
+                dados_manipul.lerArquivo(nome)
         elif n == 2:
             print('\033[0:31mArquivo existe\033[m')
         elif n == 3:

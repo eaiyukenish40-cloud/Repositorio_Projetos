@@ -21,3 +21,11 @@ def criar_arquivo(nome):
         print('\033[0:31mErro ao criar o arquivo\033[m')
     else:
         print('\033[0:32mArquivo criado com sucesso\033[m')
+
+def lerArquivo(nome):
+    try:
+        a = open(nome, 'rt')
+    except:
+        print('Houve um erro na abertura do arquivo')
+    else:
+        print(a.read())

@@ -1,11 +1,5 @@
 def header_conf(a=''):
-    from time import sleep
     tam = len(a)
-    print('-'*40)
-    print(f'{'Seja bem vindo ao sistema de cadastro':^40}')
-    print('-' * 40)
-    print(f'\033[0:33mCarregando...\033[m')
-    sleep(1)
     print('-'*40)
     print(f'{a:^40}')
     print('-' * 40)
