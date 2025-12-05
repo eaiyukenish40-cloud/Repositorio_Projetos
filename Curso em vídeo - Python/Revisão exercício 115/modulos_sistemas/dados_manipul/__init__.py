@@ -28,7 +28,9 @@ def lerArquivo(nome):
     except:
         print('Houve um erro na abertura do arquivo')
     else:
-        print(a.read())
+        for i in a:
+            temp = i.split(';')
+            print(f'\033[35m{temp[0]:<27}\033[m{temp[1]:>3}', end='')
 
 def cadastro(nome,p='desconhecida',i=0):
     try:

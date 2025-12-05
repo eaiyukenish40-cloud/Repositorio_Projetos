@@ -42,6 +42,7 @@ while True:
                     else:
                         if o == 1:
                             dados_manipul.criar_arquivo(nome)
+                            break
                         else:
                             break
             else:
@@ -51,7 +52,6 @@ while True:
         elif n == 2:
             pessoa = str(input('Digite o nome da pessoa a ser cadastrada: '))
             idade = date.today().year - int(input('Ano de nascimento: '))
-            print(idade)
             dados_manipul.cadastro(nome, pessoa, idade)
         else:
             print('Opção invalida. Tente novamente.')

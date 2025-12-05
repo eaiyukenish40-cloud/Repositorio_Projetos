@@ -15,6 +15,11 @@ def system(b=''):
         print('-' * 40)
         try:
             n = int(input('Digite sua opção: '))
+            while True:
+                if n > 3:
+                    n = int(input('\033[0:31mInexistente. Digite uma opção válida:\033[m '))
+                else:
+                    break
         except KeyboardInterrupt:
             raise print('\033[0:31mVocê desejou sair do programa\033[m')
         except (ValueError,TypeError):
