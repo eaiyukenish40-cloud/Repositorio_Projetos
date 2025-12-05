@@ -9,7 +9,8 @@ def header_conf(a=''):
     print('-'*40)
     print(f'{a:^40}')
     print('-' * 40)
-    system('Menu')
+    n = system('Menu')
+    return n
 
 
 def system(b=''):
@@ -22,7 +23,12 @@ def system(b=''):
             n = int(input('Digite sua opção: '))
         except KeyboardInterrupt:
             print('\033[0:31mVocê desejou sair do programa\033[m')
+            raise
+        except (ValueError,TypeError):
+            print('\033[0:31mVocê digitou um valor invalido\033[m')
         except Exception as ex:
             print(f'\033[0:31mErro: {ex}\033[m')
+        except:
+            print('\033[0:31mErro\033[m')
         else:
             return n
