@@ -40,6 +40,7 @@ while True:
                         print('\033[0:31mOpção incorreta tente novamente\033[m.')
                         continue
                     else:
+                        #se escolheu criar o arquivo novo, ativa a função criar arquivos
                         if o == 1:
                             dados_manipul.criar_arquivo(nome)
                             break
@@ -48,7 +49,7 @@ while True:
             else:
                 #chama a função de leitura do arquivo.
                 dados_manipul.lerArquivo(nome)
-        #cadastra a nova pessoa
+        #cadastra a nova pessoa chama a função cadastro
         elif n == 2:
             pessoa = str(input('Digite o nome da pessoa a ser cadastrada: '))
             idade = date.today().year - int(input('Ano de nascimento: '))
