@@ -11,6 +11,9 @@ sleep(1)
 while True:
     #chama a função do pacote importado. Onde é gerado o layout do mnu de operação. Retorna uma valor inteiro para ser utilizado na sequencia do programa
     n = cadastro_design.header_conf('Menu Principal')
+    if n == 3:
+        print('\033[0:33mSaindo do programa...\033[m')
+        break
     # inicio do tratamento de erros.
     try:
         #Usuário insere o nome do arquivo a ser lido.
@@ -50,9 +53,6 @@ while True:
             idade = date.today().year - int(input('Ano de nascimento: '))
             print(idade)
             dados_manipul.cadastro(nome, pessoa, idade)
-        elif n == 3:
-            print('\033[0:33mSaindo do programa...\033[m')
-            break
         else:
             print('Opção invalida. Tente novamente.')
 
