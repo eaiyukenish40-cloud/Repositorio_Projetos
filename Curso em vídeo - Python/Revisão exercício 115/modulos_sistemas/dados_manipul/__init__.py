@@ -11,4 +11,37 @@ def arq_existe(nome):
     except:
         print('\033[0:31mHouve um erro ao tentar abrir o arquivo\033[m')
     else:
+<<<<<<< Updated upstream
         print('\033[0:32mArquivo existe\033[m')
+=======
+        print('\033[0:32mArquivo existe\033[m')
+
+def criar_arquivo(nome):
+    try:
+        a = open(nome, 'wt+')
+        a.close()
+    except:
+        print('\033[0:31mErro ao criar o arquivo\033[m')
+    else:
+        print('\033[0:32mArquivo criado com sucesso\033[m')
+
+def lerArquivo(nome):
+    try:
+        a = open(nome, 'rt')
+    except:
+        print('Houve um erro na abertura do arquivo')
+    else:
+        for i in a:
+            temp = i.split(';')
+            print(f'\033[35m{temp[0]:<27}\033[m{temp[1]:>3}', end='')
+        print(f'{a.read()}')
+
+def cadastro(nome,p='desconhecida',i=0):
+    try:
+        a = open(nome, 'at+')
+    except:
+        print('\033[0:31mHouve um erro na abertura do arquivo\033[m')
+    else:
+        a.write(f'{p};{i}')
+        print(f'Cadastrado com sucesso')
+>>>>>>> Stashed changes
